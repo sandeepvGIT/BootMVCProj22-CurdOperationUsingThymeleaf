@@ -1,0 +1,59 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+<style>
+.container{
+   padding:50px;
+   background-color: lightblue;
+}
+input[type=text]{
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   display: inline-block;
+   border: none;
+   background: #f1f1f1;
+}
+hr{
+   border: 1px solid #f1f1f1;
+   margin-bottom: 25px;
+}
+.registerbtn{
+   background-color: #4CAF50;
+   color: white;
+   padding: 16px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   opacity: 0.9;
+}
+.registerbtn:hover{
+    opacity: 1;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form  th:action="@{/employee/insert_employee}"  th:object="${emp}" method="post">
+<div class="container">
+<center><h1>Employee Registeration Form</h1></center>
+<hr>
+<label>EmployeeNumber</label>
+<input  th:field="*{empno}"  type="text" size="15" placeholder="Enter employee number" />
+<label>EmployeeName</label>
+<input th:field="*{ename}" type="text" size="15" placeholder="Enter employee name" />
+<label>Job</label>
+<input th:field="*{job}" type="text" size="15" placeholder="Enter employee job" />
+<label>Salary</label>
+<input th:field="*{sal}" type="text" size="15" placeholder="Enter employee salary" />
+<label>Department</label>
+<input th:field="*{deptno}" type="text" size="15" placeholder="Enter employee deptno" />
+<button type="submit" class="registerbtn">Register</button>
+</div>
+</form>
+
+</body>
+</html>
